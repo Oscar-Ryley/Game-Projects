@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm2slcgnaefro"]
+
+[ext_resource type="Script" path="res://Godot/crystal_pickup.gd" id="1_n52re"]
+[ext_resource type="Texture2D" uid="uid://bkj1rfk45mcj2" path="res://Assets/Charm1.png" id="1_xsaok"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uwtsk"]
+radius = 5.0
+height = 26.0
+
+[node name="Crystal-Pickup" type="Node2D"]
+script = ExtResource("1_n52re")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("1_xsaok")
+
+[node name="Crystal-Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crystal-Area"]
+shape = SubResource("CapsuleShape2D_uwtsk")
+
+[connection signal="area_entered" from="Crystal-Area" to="." method="_on_crystal_area_area_entered"]

@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://bi6rsmoj533g1"]
+
+[ext_resource type="Script" path="res://Godot/global.gd" id="1_4ejgw"]
+[ext_resource type="Texture2D" uid="uid://b6qtfr0ygqhby" path="res://Assets/Background-road.png" id="1_h0b2w"]
+[ext_resource type="Script" path="res://Godot/FullScreen_Button.gd" id="2_32v0r"]
+[ext_resource type="Script" path="res://Godot/Wizard.gd" id="3_2nud7"]
+[ext_resource type="Texture2D" uid="uid://co6p7oeurbdu" path="res://Assets/Wizard-idle.png" id="3_jrkim"]
+[ext_resource type="Texture2D" uid="uid://dc3yl3drqcup4" path="res://Assets/Wizard-dead.png" id="4_o7qy8"]
+[ext_resource type="Texture2D" uid="uid://bsx31wrkgaik5" path="res://Assets/Zombie-charmed.png" id="4_vpyds"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1tl02"]
+size = Vector2(208.07, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_md6cd"]
+size = Vector2(1634, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhp5g"]
+size = Vector2(100, 912.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5swp"]
+size = Vector2(110, 908)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nymey"]
+radius = 23.0
+height = 82.0
+
+[node name="Scene" type="Node2D"]
+script = ExtResource("1_4ejgw")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(649, -16)
+scale = Vector2(7.77624, 1.45114)
+shape = SubResource("RectangleShape2D_1tl02")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(640, 736)
+shape = SubResource("RectangleShape2D_md6cd")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(-52, 343)
+shape = SubResource("RectangleShape2D_hhp5g")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(1336, 344)
+shape = SubResource("RectangleShape2D_s5swp")
+
+[node name="CheckButton" type="CheckButton" parent="."]
+offset_right = 44.0
+offset_bottom = 24.0
+script = ExtResource("2_32v0r")
+
+[node name="Wizard" type="CharacterBody2D" parent="."]
+script = ExtResource("3_2nud7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wizard"]
+position = Vector2(630, 396)
+shape = SubResource("CapsuleShape2D_nymey")
+
+[node name="Wizard-idle" type="Sprite2D" parent="Wizard"]
+z_index = 5
+position = Vector2(644, 360)
+scale = Vector2(0.0595833, 0.0595833)
+texture = ExtResource("3_jrkim")
+
+[node name="Charmed-Zombie" type="Sprite2D" parent="Wizard"]
+visible = false
+position = Vector2(635, 364)
+scale = Vector2(0.049, 0.049)
+texture = ExtResource("4_vpyds")
+
+[node name="Dead-Wizard" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(539, 381)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("4_o7qy8")
+
+[node name="Background-road2" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(634.919, 358.522)
+scale = Vector2(0.160638, 0.160638)
+texture = ExtResource("1_h0b2w")
+
+[node name="Spawn_timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="toggled" from="CheckButton" to="CheckButton" method="_on_toggled"]
+[connection signal="timeout" from="Spawn_timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://7e1wggw02u6o"]
+
+[ext_resource type="Texture2D" uid="uid://cx0av8wwprcrc" path="res://Assets/Zombie-idle.png" id="1_2l48i"]
+[ext_resource type="Script" path="res://Godot/Zombie.gd" id="1_kqfs0"]
+[ext_resource type="Texture2D" uid="uid://j2cwsbd66mto" path="res://Assets/Zombie-uncharmed.png" id="2_uur21"]
+[ext_resource type="Texture2D" uid="uid://ch7jomcpk5qmc" path="res://Assets/Zombie-hurt.png" id="4_prq41"]
+[ext_resource type="Texture2D" uid="uid://djaal748wleh6" path="res://Assets/Zombie-uncharmed-hurt.png" id="5_mvqj3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6vm4o"]
+radius = 19.0
+height = 114.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m55h0"]
+radius = 22.0
+height = 120.0
+
+[node name="Zombie" type="CharacterBody2D"]
+script = ExtResource("1_kqfs0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(636, 331)
+shape = SubResource("CapsuleShape2D_6vm4o")
+
+[node name="Uncharmable" type="Sprite2D" parent="."]
+position = Vector2(634, 329)
+scale = Vector2(0.0486667, 0.0486667)
+texture = ExtResource("1_2l48i")
+
+[node name="Charmable" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(633, 322)
+scale = Vector2(0.049, 0.049)
+texture = ExtResource("2_uur21")
+
+[node name="Zombie-Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zombie-Area2D"]
+position = Vector2(636, 331)
+shape = SubResource("CapsuleShape2D_m55h0")
+
+[node name="Zombie-hurt" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(634, 329)
+scale = Vector2(0.049, 0.049)
+texture = ExtResource("4_prq41")
+
+[node name="Zombie-uncharmed-hurt" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(633, 322)
+scale = Vector2(0.049, 0.049)
+texture = ExtResource("5_mvqj3")
+
+[connection signal="area_entered" from="Zombie-Area2D" to="." method="_on_area_2d_area_entered"]

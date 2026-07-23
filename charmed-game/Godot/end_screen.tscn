@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4bhyemxnw0dh"]
+
+[ext_resource type="Texture2D" uid="uid://b1asvgebeflrl" path="res://Assets/Darkened Screen.png" id="1_apdxl"]
+[ext_resource type="Script" path="res://Godot/end_screen.gd" id="1_au6pf"]
+[ext_resource type="Script" path="res://Godot/killcount.gd" id="2_i7j5v"]
+[ext_resource type="Script" path="res://Godot/HighScore.gd" id="3_hjfsw"]
+[ext_resource type="Script" path="res://Godot/RestartButton.gd" id="4_c56jy"]
+
+[node name="End Screen" type="Node2D"]
+position = Vector2(0, -2)
+script = ExtResource("1_au6pf")
+
+[node name="You Lose" type="Label" parent="."]
+z_index = 8
+offset_left = 414.0
+offset_top = 114.0
+offset_right = 873.0
+offset_bottom = 254.0
+theme_override_font_sizes/font_size = 100
+text = "You Lose!"
+
+[node name="DarkenedScreen" type="Sprite2D" parent="."]
+position = Vector2(652, 417)
+texture = ExtResource("1_apdxl")
+
+[node name="Kills" type="Label" parent="."]
+z_index = 8
+offset_left = 514.0
+offset_top = 246.0
+offset_right = 623.0
+offset_bottom = 318.0
+theme_override_font_sizes/font_size = 50
+text = "Kills"
+
+[node name="KillsCount" type="RichTextLabel" parent="Kills"]
+offset_left = 142.0
+offset_top = -7.0
+offset_right = 246.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 50
+scroll_active = false
+script = ExtResource("2_i7j5v")
+
+[node name="High-Score" type="Label" parent="."]
+z_index = 8
+offset_left = 351.0
+offset_top = 307.0
+offset_right = 610.0
+offset_bottom = 379.0
+theme_override_font_sizes/font_size = 50
+text = "High Score"
+
+[node name="HighScore" type="RichTextLabel" parent="High-Score"]
+offset_left = 301.0
+offset_top = -4.0
+offset_right = 425.0
+offset_bottom = 97.0
+theme_override_font_sizes/normal_font_size = 50
+scroll_active = false
+script = ExtResource("3_hjfsw")
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 579.0
+offset_top = 389.0
+offset_right = 654.0
+offset_bottom = 420.0
+text = "RESTART"
+script = ExtResource("4_c56jy")
+
+[connection signal="pressed" from="RestartButton" to="RestartButton" method="_on_pressed"]

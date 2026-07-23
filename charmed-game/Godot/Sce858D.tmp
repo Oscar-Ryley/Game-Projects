@@ -1,0 +1,129 @@
+[gd_scene load_steps=13 format=3 uid="uid://bi6rsmoj533g1"]
+
+[ext_resource type="Script" path="res://Godot/global.gd" id="1_4ejgw"]
+[ext_resource type="Texture2D" uid="uid://b6qtfr0ygqhby" path="res://Assets/Background-road.png" id="1_h0b2w"]
+[ext_resource type="Script" path="res://Godot/FullScreen_Button.gd" id="2_32v0r"]
+[ext_resource type="Script" path="res://Godot/Hearts.gd" id="2_jv6x4"]
+[ext_resource type="Texture2D" uid="uid://co30ob6vjcbjs" path="res://Assets/Heart-full.png" id="2_whrn1"]
+[ext_resource type="Script" path="res://Godot/Wizard.gd" id="3_2nud7"]
+[ext_resource type="Texture2D" uid="uid://s0knddthvis1" path="res://Assets/Heart-hurt.png" id="3_grgew"]
+[ext_resource type="Texture2D" uid="uid://co6p7oeurbdu" path="res://Assets/Wizard-idle.png" id="3_jrkim"]
+[ext_resource type="Texture2D" uid="uid://dc3yl3drqcup4" path="res://Assets/Wizard-dead.png" id="4_o7qy8"]
+[ext_resource type="Texture2D" uid="uid://bsx31wrkgaik5" path="res://Assets/Zombie-charmed.png" id="4_vpyds"]
+[ext_resource type="Script" path="res://Godot/KillCount.gd" id="8_jbke3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nymey"]
+radius = 23.0
+height = 82.0
+
+[node name="Scene" type="Node2D"]
+script = ExtResource("1_4ejgw")
+
+[node name="Hearts" type="Node2D" parent="."]
+script = ExtResource("2_jv6x4")
+
+[node name="Heart1" type="Node2D" parent="Hearts"]
+position = Vector2(1243, 35)
+
+[node name="Full" type="Sprite2D" parent="Hearts/Heart1"]
+position = Vector2(-1, -2)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_whrn1")
+
+[node name="Hurt" type="Sprite2D" parent="Hearts/Heart1"]
+visible = false
+position = Vector2(-1, -2)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("3_grgew")
+
+[node name="Heart2" type="Node2D" parent="Hearts"]
+position = Vector2(1176, 36)
+
+[node name="Full" type="Sprite2D" parent="Hearts/Heart2"]
+position = Vector2(-1, -2)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_whrn1")
+
+[node name="Hurt" type="Sprite2D" parent="Hearts/Heart2"]
+visible = false
+position = Vector2(-1, -2)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("3_grgew")
+
+[node name="Heart3" type="Node2D" parent="Hearts"]
+position = Vector2(1112, 34)
+
+[node name="Full" type="Sprite2D" parent="Hearts/Heart3"]
+position = Vector2(-1, -2)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_whrn1")
+
+[node name="Hurt" type="Sprite2D" parent="Hearts/Heart3"]
+visible = false
+position = Vector2(-1, -2)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("3_grgew")
+
+[node name="CheckButton" type="CheckButton" parent="."]
+offset_right = 44.0
+offset_bottom = 24.0
+script = ExtResource("2_32v0r")
+
+[node name="Wizard" type="CharacterBody2D" parent="."]
+position = Vector2(681, 362)
+script = ExtResource("3_2nud7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wizard"]
+position = Vector2(-4.62503, 41.3749)
+shape = SubResource("CapsuleShape2D_nymey")
+
+[node name="Wizard-idle" type="Sprite2D" parent="Wizard"]
+z_index = 5
+position = Vector2(9.375, 5.375)
+scale = Vector2(0.0595833, 0.0595833)
+texture = ExtResource("3_jrkim")
+
+[node name="Charmed-Zombie" type="Sprite2D" parent="Wizard"]
+visible = false
+z_index = 5
+position = Vector2(-4, 24)
+scale = Vector2(0.049, 0.049)
+texture = ExtResource("4_vpyds")
+
+[node name="Wizard-Area" type="Area2D" parent="Wizard"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Wizard/Wizard-Area"]
+position = Vector2(-4.62503, 41.3749)
+shape = SubResource("CapsuleShape2D_nymey")
+
+[node name="Dead-Wizard" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(539, 381)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("4_o7qy8")
+
+[node name="Background-road2" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(634.919, 358.522)
+scale = Vector2(0.160638, 0.160638)
+texture = ExtResource("1_h0b2w")
+
+[node name="Spawn_timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 85.0
+offset_top = 6.0
+offset_right = 183.0
+offset_bottom = 104.0
+script = ExtResource("8_jbke3")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="toggled" from="CheckButton" to="CheckButton" method="_on_toggled"]
+[connection signal="timeout" from="Spawn_timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Wizard" method="_on_timer_timeout"]

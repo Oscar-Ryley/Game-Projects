@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi6rsmoj533g1"]
+
+[ext_resource type="Texture2D" uid="uid://b6qtfr0ygqhby" path="res://Assets/Background-road.png" id="1_h0b2w"]
+[ext_resource type="Script" path="res://Godot/FullScreen_Button.gd" id="2_32v0r"]
+[ext_resource type="Script" path="res://Godot/Wizard.gd" id="3_2nud7"]
+[ext_resource type="Texture2D" uid="uid://co6p7oeurbdu" path="res://Assets/Wizard-idle.png" id="3_jrkim"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nymey"]
+radius = 23.0
+height = 82.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background-road2" type="Sprite2D" parent="."]
+position = Vector2(634.919, 358.522)
+scale = Vector2(0.160638, 0.160638)
+texture = ExtResource("1_h0b2w")
+
+[node name="CheckButton" type="CheckButton" parent="."]
+offset_right = 44.0
+offset_bottom = 24.0
+script = ExtResource("2_32v0r")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("3_2nud7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(630, 396)
+shape = SubResource("CapsuleShape2D_nymey")
+
+[node name="Wizard-idle" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(644, 360)
+scale = Vector2(0.0595833, 0.0595833)
+texture = ExtResource("3_jrkim")
+
+[connection signal="toggled" from="CheckButton" to="CheckButton" method="_on_toggled"]
