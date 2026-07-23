@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://f6m61388wleg"]
+
+[ext_resource type="Script" path="res://Scripts/Dino.gd" id="1_6c3d5"]
+[ext_resource type="PackedScene" uid="uid://c1dphfocia3xu" path="res://Assets/3D Models/animated_t-rex/scene.gltf" id="1_ksxgr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hs2gt"]
+size = Vector3(2.81781, 6.35754, 16.2383)
+
+[node name="DinoEnemy" type="Node3D"]
+
+[node name="Dino" type="CharacterBody3D" parent="."]
+script = ExtResource("1_6c3d5")
+turn_speed = null
+
+[node name="Sketchfab_Scene" parent="Dino" instance=ExtResource("1_ksxgr")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dino"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.037262, 3.19135, -0.206924)
+shape = SubResource("BoxShape3D_hs2gt")

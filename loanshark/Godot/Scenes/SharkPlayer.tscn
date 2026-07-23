@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://xorj06obw81u"]
+
+[ext_resource type="Script" path="res://Scripts/SharkPlayer.gd" id="1_kg5qi"]
+[ext_resource type="PackedScene" uid="uid://bermqv43nn4k2" path="res://Assets/3D Models/thicc_happy_white_shark/scene.gltf" id="2_tug2n"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oyls5"]
+radius = 1.3
+height = 6.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ohf04"]
+size = Vector3(2, 4, 4)
+
+[node name="SharkPlayer" type="CharacterBody3D"]
+script = ExtResource("1_kg5qi")
+
+[node name="Shark Model" parent="." instance=ExtResource("2_tug2n")]
+transform = Transform3D(-0.988369, 0, -0.152072, 0, 1, 0, 0.152072, 0, -0.988369, 0, -0.0175357, 0.0134277)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0389284, 0.999242, 0, -0.999242, 0.0389284, 0.202581, 1.04016, 0.655098)
+shape = SubResource("CapsuleShape3D_oyls5")
+
+[node name="CameraMount" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965622, 0.259948, 0, -0.259948, 0.965622, 0, 4.87292, 3.59475)
+
+[node name="Camera3D" type="Camera3D" parent="CameraMount"]
+current = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.126285, 0.991994, 0, -0.991994, 0.126285, 0.05603, 1.76003, -0.321922)
+light_color = Color(1, 1, 0.741176, 1)
+light_energy = 40.0
+light_volumetric_fog_energy = 6.25
+spot_range = 14.01
+spot_attenuation = 1.44
+spot_angle = 74.61
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.294174, -1.67638)
+light_color = Color(1, 1, 0.741176, 1)
+light_energy = 20.0
+spot_range = 18.971
+spot_attenuation = -0.84
+spot_angle = 52.69
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.126285, 0.991994, 0, -0.991994, 0.126285, 0.05603, 5.45954, 0.804222)
+light_color = Color(0.729412, 1, 1, 1)
+light_energy = 10.0
+light_volumetric_fog_energy = 6.25
+spot_range = 7.389
+spot_attenuation = 1.44
+spot_angle = 37.68
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.21675, 0.0134277)
+shape = SubResource("BoxShape3D_ohf04")

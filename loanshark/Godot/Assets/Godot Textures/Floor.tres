@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cyk7deujb77cf"]
+
+[ext_resource type="Texture2D" uid="uid://d3honysb4nvj8" path="res://Assets/Textures/worn_brick_floor_4k/worn_brick_floor_diff_4k.jpg" id="1_n7qm8"]
+[ext_resource type="Texture2D" uid="uid://b8p81pb3qtgqp" path="res://Assets/Textures/worn_brick_floor_4k/worn_brick_floor_disp_4k.png" id="2_7wsud"]
+
+[resource]
+albedo_texture = ExtResource("1_n7qm8")
+normal_texture = ExtResource("2_7wsud")
+uv1_scale = Vector3(30, 30, 30)

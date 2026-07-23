@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://duxyn70vaghhl"]
+
+[ext_resource type="Texture2D" uid="uid://bk1h4xieojufh" path="res://Assets/Textures/stone_brick_wall_001_4k/stone_brick_wall_001_diff_4k.jpg" id="1_p7h5a"]
+[ext_resource type="Texture2D" uid="uid://btkg5qts557ah" path="res://Assets/Textures/stone_brick_wall_001_4k/stone_brick_wall_001_rough_4k.jpg" id="2_apesh"]
+
+[resource]
+albedo_texture = ExtResource("1_p7h5a")
+roughness_texture = ExtResource("2_apesh")
+uv1_scale = Vector3(15, 15, 15)
