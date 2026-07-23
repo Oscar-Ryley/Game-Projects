@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://vti2nilc1jyc"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_xw4q1"]
+[ext_resource type="PackedScene" uid="uid://3chc3dglvor5" path="res://player/antarctic_man.glb" id="2_uh050"]
+[ext_resource type="Script" path="res://player/antarctic_man.gd" id="3_tg6wf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8h6ju"]
+radius = 0.25
+
+[sub_resource type="SphereMesh" id="SphereMesh_f3j14"]
+radius = 0.25
+height = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4dfl7"]
+size = Vector3(2, 3, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pdj7q"]
+size = Vector3(2, 3, 2)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_xw4q1")
+
+[node name="antarctic_man_text" parent="." instance=ExtResource("2_uh050")]
+transform = Transform3D(-0.01, 0, -8.74228e-10, 0, 0.01, 0, 8.74228e-10, 0, -0.01, -0.0388902, -0.850757, -0.0346701)
+script = ExtResource("3_tg6wf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0485522, 0.0168548, 0)
+shape = SubResource("CapsuleShape3D_8h6ju")
+
+[node name="DirectionBall" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.667845, -1.5)
+visible = false
+mesh = SubResource("SphereMesh_f3j14")
+
+[node name="SnowballArea3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SnowballArea3D"]
+shape = SubResource("BoxShape3D_4dfl7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SnowballArea3D/CollisionShape3D"]
+visible = false
+mesh = SubResource("BoxMesh_pdj7q")
