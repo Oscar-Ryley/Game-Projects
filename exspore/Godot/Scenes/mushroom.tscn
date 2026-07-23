@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvqrgpht3x5o0"]
+
+[ext_resource type="Script" path="res://Scripts/mushroom.gd" id="1_4uteg"]
+[ext_resource type="Texture2D" uid="uid://jwix6vmvyajr" path="res://Assets/Mushrooms/Big_bob.png" id="1_lni2h"]
+[ext_resource type="Texture2D" uid="uid://bxyc8c1uvsuy2" path="res://Assets/Mushrooms/Small_Bob.png" id="2_86v4e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ud7mq"]
+radius = 61.0
+height = 122.0
+
+[node name="Mushroom" type="RigidBody2D"]
+z_index = 2
+gravity_scale = 0.0
+
+[node name="Mushroom2" type="TextureButton" parent="."]
+offset_right = 128.0
+offset_bottom = 128.0
+texture_normal = ExtResource("1_lni2h")
+texture_pressed = ExtResource("2_86v4e")
+script = ExtResource("1_4uteg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(65, 71)
+shape = SubResource("CapsuleShape2D_ud7mq")
+
+[connection signal="mouse_entered" from="Mushroom2" to="Mushroom2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Mushroom2" to="Mushroom2" method="_on_mouse_exited"]
