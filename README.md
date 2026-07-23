@@ -1,6 +1,6 @@
 # 🎮 Game Projects
 
-A directory of game development project repos, including Hackathon & Game Jam entries.
+A directory of game development project code bases/ repos, including Hackathon & Game Jam entries.
 
 ---
 
@@ -22,10 +22,15 @@ A directory of game development project repos, including Hackathon & Game Jam en
 >
 > 3D environmental horror game created for **CS Alumni Hack 2024** *(Apr 6-7, 2024)* w/ Rui Araújo [:octocat:](https://github.com/Ruchu7).
 
+> ### ❄️ [The Snowball Game](./snowballgame)
+> [`📁/snowballgame/`](./snowballgame) • [<code><img src="https://cdn.simpleicons.org/devpost/003B5C" width="15" height="15" style="vertical-align: middle;" /> Devpost</code>](https://devpost.com/software/thesnowballgame)
+>
+> Collaborative Game Development for a **Programming Module** [78%] *(Mar-Apr, 2024)* w/ Matthew Peters [:octocat:](https://github.com/FaintLocket424).
+
 > ### 🪄 [Charmed, I'm Sure](./charmed-game)
 > [`📁/charmed-game/`](./charmed-game) • [<code><img src="https://cdn.simpleicons.org/itchdotio/FA5C5C" width="15" height="15" style="vertical-align: middle;" /> Itch.io</code>](https://oryley.itch.io/charmed-im-sure)
 >
-> Top-down spell-casting game against a zombie horde. Created for **Winter MelonJam 2023** *(Theme: Charm, Dec 28–30, 2023)*.
+> Top-down spell-casting game against a zombie horde. Created for **Winter MelonJam 2023** *(Theme: Charm, Dec 28-30, 2023)*.
 
 > ### 📋 [ClickBoard](./clickboard)
 > [`📁/clickboard/`](./clickboard) • [<code><img src="https://cdn.simpleicons.org/itchdotio/FA5C5C" width="15" height="15" style="vertical-align: middle;" /> Itch.io</code>](https://oryley.itch.io/clickboard)
@@ -35,7 +40,7 @@ A directory of game development project repos, including Hackathon & Game Jam en
 > ### ⚙️ [Automated Obsolescence](./automatedobsolescence)
 > [`📁/automatedobsolescence/`](./automatedobsolescence) • [<code><img src="https://cdn.simpleicons.org/itchdotio/FA5C5C" width="15" height="15" style="vertical-align: middle;" /> Itch.io</code>](https://oryley.itch.io/automated-obsolescence)
 >
-> Physics-based puzzle game, only online submission to **LanHack 2023** *(Nov 25–26, 2023)*.
+> Physics-based puzzle game, only online submission to **LanHack 2023** *(Nov 25-26, 2023)*.
 
 > ### 🚀 [Sammy's Spaceship](./durhack23)
 > [`📁/durhack23/`](./durhack23) • [<code><img src="https://cdn.simpleicons.org/devpost/003B5C" width="15" height="15" style="vertical-align: middle;" /> Devpost</code>](https://devpost.com/software/sammy-s-spaceship)
