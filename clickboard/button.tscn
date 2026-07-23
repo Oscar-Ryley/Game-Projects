@@ -1,0 +1,633 @@
+[gd_scene load_steps=46 format=3 uid="uid://c7bxolnd7x4ra"]
+
+[ext_resource type="Script" path="res://button.gd" id="1_dov56"]
+[ext_resource type="Texture2D" uid="uid://bt5ayaiqky8tr" path="res://art/Button-unclicked.svg" id="1_l3bn3"]
+[ext_resource type="Texture2D" uid="uid://dkx3besi4oxok" path="res://art/Page.svg" id="1_pqjbw"]
+[ext_resource type="Texture2D" uid="uid://dvdduqupwy65g" path="res://art/Button-clicked.svg" id="2_mmrhe"]
+[ext_resource type="Texture2D" uid="uid://bicdk34rh5dm7" path="res://art/Hinge.svg" id="2_tukct"]
+[ext_resource type="Script" path="res://switch-pages.gd" id="3_0u5ta"]
+[ext_resource type="Texture2D" uid="uid://e1i7lsggp2rf" path="res://art/Background.svg" id="5_28fwe"]
+[ext_resource type="Script" path="res://clicks-number.gd" id="5_t65d1"]
+[ext_resource type="Script" path="res://GamePage.gd" id="5_ywpvy"]
+[ext_resource type="Texture2D" uid="uid://dehc6obuvj7c7" path="res://art/Logo-rectangle.png" id="6_cjvc4"]
+[ext_resource type="Texture2D" uid="uid://be8ls5s886mrl" path="res://art/OPageShadow.svg" id="6_f6otd"]
+[ext_resource type="FontFile" uid="uid://t7myjio8eg4q" path="res://fonts/MouldyCheeseRegular-WyMWG.ttf" id="6_rhvgu"]
+[ext_resource type="Script" path="res://FullScreenButton.gd" id="8_cvtrw"]
+[ext_resource type="Texture2D" uid="uid://ctvvaqxeql7y6" path="res://art/OPage.svg" id="10_j1453"]
+[ext_resource type="Texture2D" uid="uid://c1lth3x6u01mj" path="res://art/PageShadow.svg" id="11_61r3p"]
+[ext_resource type="Script" path="res://OptionsPage.gd" id="13_0cu8c"]
+[ext_resource type="Script" path="res://Employees.gd" id="16_as8lm"]
+[ext_resource type="Script" path="res://RandomClicks.gd" id="16_cihb3"]
+[ext_resource type="Script" path="res://OfficeChairs.gd" id="16_m6o1d"]
+[ext_resource type="Script" path="res://OfficeSupplies.gd" id="16_rh23u"]
+[ext_resource type="Script" path="res://WaterTanks.gd" id="16_uxaef"]
+[ext_resource type="Script" path="res://UpgradesTitle.gd" id="17_3pr2p"]
+[ext_resource type="Script" path="res://Cost.gd" id="17_5d4m0"]
+[ext_resource type="Script" path="res://Up1Button.gd" id="19_pjrp5"]
+[ext_resource type="Texture2D" uid="uid://wtkel2hhfkkm" path="res://art/UpButton-unclicked-employee.svg" id="20_anlip"]
+[ext_resource type="Script" path="res://Up1Cost.gd" id="20_r6vjs"]
+[ext_resource type="Script" path="res://Up2Button.gd" id="21_salnt"]
+[ext_resource type="Texture2D" uid="uid://cts8r46lqd07t" path="res://art/UpButton-clicked-employee.svg" id="21_to7oc"]
+[ext_resource type="Script" path="res://Up2Cost.gd" id="23_27ydi"]
+[ext_resource type="Script" path="res://Up3Button.gd" id="23_l3yxa"]
+[ext_resource type="Texture2D" uid="uid://x0wxh3bkmyyw" path="res://art/UpButton-unclicked-supplies.svg" id="25_soqbu"]
+[ext_resource type="Script" path="res://Up4Button.gd" id="25_tk6qt"]
+[ext_resource type="Script" path="res://Up3Cost.gd" id="26_6vnkx"]
+[ext_resource type="Texture2D" uid="uid://bl722y0ka27op" path="res://art/UpButton-clicked-supplies.svg" id="26_crjym"]
+[ext_resource type="Script" path="res://Up4Cost.gd" id="29_fk718"]
+[ext_resource type="Texture2D" uid="uid://uxtwma8a1psj" path="res://art/UpButton-unclicked-chair.svg" id="30_ppah5"]
+[ext_resource type="Texture2D" uid="uid://dch30g8fip06e" path="res://art/UpButton-clicked-chair.svg" id="31_yqsx0"]
+[ext_resource type="Texture2D" uid="uid://ova3ayhj6s65" path="res://art/UpButton-unclicked-tank.svg" id="35_8jrif"]
+[ext_resource type="Texture2D" uid="uid://dsl7egwek5jt" path="res://art/UpButton-clicked-tank.svg" id="36_hwi70"]
+
+[sub_resource type="Animation" id="Animation_13hbb"]
+resource_name = "Game Move down"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 370), Vector2(640, 1080)]
+}
+
+[sub_resource type="Animation" id="Animation_a7ccs"]
+resource_name = "Game Move up"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 1080), Vector2(640, 370)]
+}
+
+[sub_resource type="Animation" id="Animation_cgeag"]
+resource_name = "Move down"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../OptionsPage:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(630, 365), Vector2(630, 1080)]
+}
+
+[sub_resource type="Animation" id="Animation_cmwlh"]
+resource_name = "Move up"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../OptionsPage:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(630, 1080), Vector2(630, 365)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ihrjt"]
+_data = {
+"Game Move down": SubResource("Animation_13hbb"),
+"Game Move up": SubResource("Animation_a7ccs"),
+"Move down": SubResource("Animation_cgeag"),
+"Move up": SubResource("Animation_cmwlh")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdaw6"]
+size = Vector2(6166.84, 2067.42)
+
+[node name="ClickBoard" type="Node2D"]
+
+[node name="Hinge" type="TextureButton" parent="."]
+z_index = 2
+offset_left = -877.273
+offset_top = -308.247
+offset_right = 2115.73
+offset_bottom = 1067.75
+rotation = 0.000325306
+scale = Vector2(0.110956, 0.110956)
+pivot_offset = Vector2(1500.03, 317.533)
+texture_normal = ExtResource("2_tukct")
+script = ExtResource("3_0u5ta")
+
+[node name="OptionsPage" type="Sprite2D" parent="."]
+position = Vector2(630, 1080)
+scale = Vector2(0.213737, 0.213737)
+texture = ExtResource("10_j1453")
+script = ExtResource("13_0cu8c")
+
+[node name="OPageShadow" type="Sprite2D" parent="OptionsPage"]
+z_index = -1
+position = Vector2(-79.5374, 84.2158)
+scale = Vector2(1.00905, 1.00905)
+texture = ExtResource("6_f6otd")
+
+[node name="ClickBoard" type="Label" parent="OptionsPage"]
+offset_left = -262.006
+offset_top = -500.615
+offset_right = 2204.99
+offset_bottom = 15.3848
+scale = Vector2(0.188206, 0.210982)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 500
+text = "ClickBoard"
+
+[node name="FullScreen" type="CheckButton" parent="OptionsPage"]
+offset_left = -425.757
+offset_top = 149.717
+offset_right = -283.757
+offset_bottom = 180.717
+scale = Vector2(2.89145, 2.89145)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 50
+text = "Fullscreen"
+script = ExtResource("8_cvtrw")
+
+[node name="Author" type="Label" parent="OptionsPage"]
+offset_left = -580.152
+offset_top = 1029.3
+offset_right = 4876.85
+offset_bottom = 1545.3
+scale = Vector2(0.209967, 0.224653)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 500
+text = "Created by Oscar Ryley"
+
+[node name="Logo-rectangle-line" type="Sprite2D" parent="OptionsPage"]
+position = Vector2(-18.7148, -767.297)
+rotation = 0.00821406
+scale = Vector2(0.20709, 0.20709)
+texture = ExtResource("6_cjvc4")
+
+[node name="OptionPageAnim" type="AnimationPlayer" parent="OptionsPage"]
+root_node = NodePath("../../GamePage")
+libraries = {
+"": SubResource("AnimationLibrary_ihrjt")
+}
+
+[node name="GamePage" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(640, 370)
+scale = Vector2(0.299546, 0.299546)
+texture = ExtResource("1_pqjbw")
+script = ExtResource("5_ywpvy")
+
+[node name="PageShadow" type="Sprite2D" parent="GamePage"]
+z_index = -1
+position = Vector2(-60.0911, 40.0605)
+scale = Vector2(0.981043, 0.981043)
+texture = ExtResource("11_61r3p")
+
+[node name="Logo-rectangle-line" type="Sprite2D" parent="GamePage"]
+position = Vector2(-1689.22, -951.438)
+rotation = -0.196116
+scale = Vector2(0.065033, 0.065033)
+texture = ExtResource("6_cjvc4")
+
+[node name="BigButton" type="TextureButton" parent="GamePage"]
+offset_left = -1782.7
+offset_top = -864.641
+offset_right = 1207.3
+offset_bottom = 2130.36
+scale = Vector2(0.179974, 0.179974)
+texture_normal = ExtResource("1_l3bn3")
+texture_pressed = ExtResource("2_mmrhe")
+script = ExtResource("1_dov56")
+
+[node name="Clicks" type="Label" parent="GamePage/BigButton"]
+layout_mode = 0
+offset_left = 3413.07
+offset_top = 463.727
+offset_right = 3453.07
+offset_bottom = 1463.73
+scale = Vector2(1.29193, 1.82245)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 1000
+script = ExtResource("5_t65d1")
+
+[node name="TheWordClicks" type="Label" parent="GamePage/BigButton"]
+layout_mode = 0
+offset_left = 4340.54
+offset_top = 2170.26
+offset_right = 5678.54
+offset_bottom = 2673.26
+scale = Vector2(0.891272, 0.942215)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 500
+text = "Clicks"
+
+[node name="RandomClicks" type="Label" parent="GamePage"]
+offset_left = -1308.65
+offset_top = -898.023
+offset_right = -1268.65
+offset_bottom = 101.977
+scale = Vector2(0.0653448, 0.0921785)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 1000
+script = ExtResource("16_cihb3")
+
+[node name="GamePageAnim" type="AnimationPlayer" parent="GamePage"]
+libraries = {
+"": SubResource("AnimationLibrary_ihrjt")
+}
+
+[node name="UpgradesTitle" type="Label" parent="GamePage"]
+offset_left = 804.551
+offset_top = -807.889
+offset_right = 3052.56
+offset_bottom = -291.889
+scale = Vector2(0.252079, 0.355595)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 500
+text = "Upgrades"
+script = ExtResource("17_3pr2p")
+
+[node name="Cost" type="Label" parent="GamePage/UpgradesTitle"]
+layout_mode = 0
+offset_left = -2383.81
+offset_top = 488.186
+offset_right = -1241.81
+offset_bottom = 991.186
+scale = Vector2(0.90868, 0.763194)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 500
+text = "Cost"
+script = ExtResource("17_5d4m0")
+
+[node name="Upgrade1" type="Label" parent="GamePage"]
+offset_left = 741.122
+offset_top = -460.697
+offset_right = 5496.12
+offset_bottom = 55.3026
+scale = Vector2(0.204004, 0.287778)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 500
+text = "Hire a new Employee"
+
+[node name="What1Does" type="Label" parent="GamePage/Upgrade1"]
+layout_mode = 0
+offset_left = 58.9121
+offset_top = 473.291
+offset_right = 6745.91
+offset_bottom = 989.291
+scale = Vector2(0.50331, 0.506363)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 500
+text = "Automatic clicks per second"
+
+[node name="Num1Upgrades" type="Label" parent="GamePage/Upgrade1"]
+layout_mode = 0
+offset_left = 58.9121
+offset_top = 793.457
+offset_right = 2711.91
+offset_bottom = 1309.46
+scale = Vector2(0.426246, 0.428831)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 500
+text = "Employees:"
+
+[node name="Employees" type="Label" parent="GamePage/Upgrade1"]
+layout_mode = 0
+offset_left = 1325.51
+offset_top = 812.039
+offset_right = 1365.51
+offset_bottom = 1812.04
+scale = Vector2(0.393411, 0.325287)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 1000
+script = ExtResource("16_as8lm")
+
+[node name="Up1Button" type="TextureButton" parent="GamePage/Upgrade1"]
+layout_mode = 0
+offset_left = -1309.15
+offset_top = 69.6038
+offset_right = 1673.85
+offset_bottom = 2913.6
+scale = Vector2(0.407676, 0.301291)
+texture_normal = ExtResource("20_anlip")
+texture_pressed = ExtResource("21_to7oc")
+script = ExtResource("19_pjrp5")
+
+[node name="Up1Cost" type="Label" parent="GamePage/Upgrade1"]
+layout_mode = 0
+offset_left = -2831.03
+offset_top = 336.416
+offset_right = -2791.03
+offset_bottom = 1336.42
+scale = Vector2(0.270481, 0.266492)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 1000
+script = ExtResource("20_r6vjs")
+
+[node name="Upgrade2" type="Label" parent="GamePage"]
+offset_left = 737.783
+offset_top = -60.0913
+offset_right = 6835.78
+offset_bottom = 455.909
+scale = Vector2(0.17528, 0.247258)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 500
+text = "Buy more office supplies"
+
+[node name="What2Does" type="Label" parent="GamePage/Upgrade2"]
+layout_mode = 0
+offset_left = 58.9121
+offset_top = 473.291
+offset_right = 6745.91
+offset_bottom = 989.291
+scale = Vector2(0.50331, 0.506363)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 500
+text = "More clicks per Employee"
+
+[node name="Num2Upgrades" type="Label" parent="GamePage/Upgrade2"]
+layout_mode = 0
+offset_left = 58.9121
+offset_top = 793.457
+offset_right = 2711.91
+offset_bottom = 1309.46
+scale = Vector2(0.426246, 0.428831)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 500
+text = "Office supplies:"
+
+[node name="OfficeSupplies" type="Label" parent="GamePage/Upgrade2"]
+layout_mode = 0
+offset_left = 1790.33
+offset_top = 796.594
+offset_right = 1830.33
+offset_bottom = 1796.59
+scale = Vector2(0.422738, 0.347197)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 1000
+script = ExtResource("16_rh23u")
+
+[node name="Up2Button" type="TextureButton" parent="GamePage/Upgrade2"]
+layout_mode = 0
+offset_left = -1523.68
+offset_top = -13.502
+offset_right = 1459.32
+offset_bottom = 2830.5
+scale = Vector2(0.457757, 0.338304)
+texture_normal = ExtResource("25_soqbu")
+texture_pressed = ExtResource("26_crjym")
+script = ExtResource("21_salnt")
+
+[node name="Up2Cost" type="Label" parent="GamePage/Upgrade2"]
+layout_mode = 0
+offset_left = -3294.97
+offset_top = 337.541
+offset_right = -3254.97
+offset_bottom = 1337.55
+scale = Vector2(0.282251, 0.278088)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 1000
+script = ExtResource("23_27ydi")
+
+[node name="Upgrade3" type="Label" parent="GamePage"]
+offset_left = 741.122
+offset_top = 317.146
+offset_right = 6839.12
+offset_bottom = 833.146
+scale = Vector2(0.17528, 0.247258)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 500
+text = "Buy better office chairs"
+
+[node name="What3Does" type="Label" parent="GamePage/Upgrade3"]
+layout_mode = 0
+offset_left = 58.9121
+offset_top = 473.291
+offset_right = 6745.91
+offset_bottom = 989.291
+scale = Vector2(0.50331, 0.506363)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 500
+text = "Random click drops drop more clicks"
+
+[node name="Num3Upgrades" type="Label" parent="GamePage/Upgrade3"]
+layout_mode = 0
+offset_left = 58.9121
+offset_top = 793.457
+offset_right = 2711.91
+offset_bottom = 1309.46
+scale = Vector2(0.426246, 0.428831)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 500
+text = "Office chairs:"
+
+[node name="OfficeChairs" type="Label" parent="GamePage/Upgrade3"]
+layout_mode = 0
+offset_left = 1599.87
+offset_top = 783.098
+offset_right = 1639.87
+offset_bottom = 1783.1
+scale = Vector2(0.402573, 0.35668)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 1000
+script = ExtResource("16_m6o1d")
+
+[node name="Up3Button" type="TextureButton" parent="GamePage/Upgrade3"]
+layout_mode = 0
+offset_left = -1523.68
+offset_top = -13.502
+offset_right = 1459.32
+offset_bottom = 2830.5
+scale = Vector2(0.457757, 0.338304)
+texture_normal = ExtResource("30_ppah5")
+texture_pressed = ExtResource("31_yqsx0")
+script = ExtResource("23_l3yxa")
+
+[node name="Up3Cost" type="Label" parent="GamePage/Upgrade3"]
+layout_mode = 0
+offset_left = -3275.92
+offset_top = 337.543
+offset_right = -3235.92
+offset_bottom = 1337.55
+scale = Vector2(0.282251, 0.278088)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 1000
+script = ExtResource("26_6vnkx")
+
+[node name="Upgrade4" type="Label" parent="GamePage"]
+offset_left = 754.475
+offset_top = 687.707
+offset_right = 6852.47
+offset_bottom = 1203.71
+scale = Vector2(0.17528, 0.247258)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 500
+text = "Refresh the water cooler"
+
+[node name="What4Does" type="Label" parent="GamePage/Upgrade4"]
+layout_mode = 0
+offset_left = 58.9121
+offset_top = 473.291
+offset_right = 6745.91
+offset_bottom = 989.291
+scale = Vector2(0.50331, 0.506363)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 500
+text = "More clicks per button click"
+
+[node name="Num4Upgrades" type="Label" parent="GamePage/Upgrade4"]
+layout_mode = 0
+offset_left = 58.9121
+offset_top = 793.457
+offset_right = 2711.91
+offset_bottom = 1309.46
+scale = Vector2(0.426246, 0.428831)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 500
+text = "Water tanks:"
+
+[node name="WaterTanks" type="Label" parent="GamePage/Upgrade4"]
+layout_mode = 0
+offset_left = 1523.68
+offset_top = 810.099
+offset_right = 1563.68
+offset_bottom = 1810.1
+scale = Vector2(0.364723, 0.350667)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 1000
+script = ExtResource("16_uxaef")
+
+[node name="Up4Button" type="TextureButton" parent="GamePage/Upgrade4"]
+layout_mode = 0
+offset_left = -1523.68
+offset_top = -13.502
+offset_right = 1459.32
+offset_bottom = 2830.5
+scale = Vector2(0.457757, 0.338304)
+texture_normal = ExtResource("35_8jrif")
+texture_pressed = ExtResource("36_hwi70")
+script = ExtResource("25_tk6qt")
+
+[node name="Up4Cost" type="Label" parent="GamePage/Upgrade4"]
+layout_mode = 0
+offset_left = -3314.0
+offset_top = 351.044
+offset_right = -3274.0
+offset_bottom = 1351.05
+scale = Vector2(0.282251, 0.278088)
+theme_override_colors/font_color = Color(0.133333, 0.133333, 0.133333, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rhvgu")
+theme_override_font_sizes/font_size = 1000
+script = ExtResource("29_fk718")
+
+[node name="Node2D" type="Node2D" parent="GamePage"]
+
+[node name="EmployeeCage" type="StaticBody2D" parent="GamePage/Node2D"]
+z_index = 5
+position = Vector2(-841.273, 66.7677)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GamePage/Node2D/EmployeeCage"]
+position = Vector2(-43.3992, 1899.54)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_wdaw6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="GamePage/Node2D/EmployeeCage"]
+position = Vector2(1946.28, 190.288)
+rotation = -1.57268
+scale = Vector2(0.999999, 1)
+shape = SubResource("RectangleShape2D_wdaw6")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="GamePage/Node2D/EmployeeCage"]
+position = Vector2(-1949.62, 210.318)
+rotation = 1.5745
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_wdaw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GamePage/Node2D/EmployeeCage"]
+position = Vector2(196.965, -9163.87)
+scale = Vector2(0.826436, 8.54981)
+shape = SubResource("RectangleShape2D_wdaw6")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(636, 363)
+scale = Vector2(-3.27426, 0.409266)
+texture = ExtResource("5_28fwe")
+
+[connection signal="pressed" from="Hinge" to="OptionsPage" method="_on_hinge_pressed"]
+[connection signal="pressed" from="Hinge" to="GamePage" method="_on_hinge_pressed"]
+[connection signal="toggled" from="OptionsPage/FullScreen" to="OptionsPage/FullScreen" method="_on_toggled"]
