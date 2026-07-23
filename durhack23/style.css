@@ -1,0 +1,86 @@
+#body {
+    font-family:'Roboto' sans-serif; 
+    color: white;
+    background-image: url(./assets/images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#top-bar {
+    background-color:#3a233e; 
+}
+
+#footer {
+    background-color:#3a233e; 
+}
+
+#link {
+    color:white;
+}
+
+#button {
+    background-color:#3a233e;
+}
+
+#side-panel-button {
+    background-color:#3a233e;
+    border: none;
+}
+
+#information-box {
+    background-color:#3a233e; 
+    padding: 10px;
+    border-radius: 10%;
+}
+
+#model-info-box {
+    background-color:#3a233e; 
+    padding: 10px;
+    border-radius: 10%;
+    width: 300px;
+}
+
+.container {
+    padding-left: 20px; 
+    padding-right: 20px;
+}
+
+.column {
+    float: left;
+    padding: 30px;
+}
+  
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.model-row {
+    width: 25%;
+}
+
+.c-models-left {
+    width: 70%;
+}
+  
+.c-text-right {
+    width: 30%;
+}
+
+#cardviewer {
+    margin: 3em auto;
+    width: 300px;
+    overflow: hidden;
+    height: 200px;
+  }
+
+#buy-button {
+    background-color:#3a233e;
+    float: right;
+}
+
+#popup-group {
+    position: fixed;
+    top:0;
+}

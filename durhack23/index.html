@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Sammy's Spaceship</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Website to educate about finance to Teens">
+        <meta name="keywords" content="David Oscar">
+        <meta name="author" content="Orion Team 26">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="app.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.2.0/model-viewer.min.js"></script>
+    </head>
+    <body id="body">
+        
+        <nav class="navbar navbar-inverted" id="top-bar">
+            <div class="container-fluid" id="bootstrap-override-navbar">
+                <div class="navbar-header">
+                    <h2 class="navbar-text"> Welcome to Sammy's Spaceship! </h2>
+                </div>
+                <br>
+                <h4>Encouraging discovery and growth in finance, ad infinitum.</h4>
+            </div>
+        </nav>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="column c-models-left">
+
+                    <div class="row">
+                        <div class="card col-md-6">
+                            <model-viewer id="cardviewer" src="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb?1542147958948" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="./assets/3d_objects/model/poster.webp" shadow-intensity="1" auto rotate> </model-viewer>
+                            <div class="card-body" id="model-info-box">
+                            <h4 class="card-title">Savings</h4>
+                            <p class="card-text">Hi I'm Sammy the Spaceman! Feel free to look around my spaceship to learn more about how I could afford it!</p>
+                            <button id="button" onclick = "changeTextOne()">Learn More</button>
+                            <button id="buy-button" onclick = "changeTotalOne(); this.onclick=null;">Click here to start saving</button>
+                            </div>
+                        </div>
+                        <div class="card col-md-6">
+                            <model-viewer id="cardviewer" src="https://raw.githubusercontent.com/Oscar-Ryley/Durhack-23/main/assets/3d_objects/uploads-files-3317857-Globe.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="./assets/3d_objects/model/poster.webp" shadow-intensity="1"> </model-viewer>
+                            <div class="card-body" id="model-info-box">
+                            <h4 class="card-title">The Scope of Money</h4>
+                            <p class="card-text">Money can sure be confusing... but being up here helps with the perspective!</p>
+                            <button id="button" onclick = "changeTextTwo()">Learn More</button>
+                            <button id="buy-button" onclick = "changeTotalTwo(); this.onclick=null;">Oh... now I get it</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card col-md-6">
+                            <model-viewer id="cardviewer" src="https://raw.githubusercontent.com/Oscar-Ryley/Durhack-23/main/assets/3d_objects/sci-fi_dron.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="./assets/3d_objects/model/poster.webp" shadow-intensity="1"> </model-viewer>
+                            <div class="card-body" id="model-info-box">
+                            <h4 class="card-title">Stocks</h4>
+                            <p class="card-text">I can't predict the stock market - but I can predict this will be helpful!</p>
+                            <button id="button" onclick = "changeTextThree()">Learn More</button>
+                            <button id="buy-button" onclick = "changeTotalThree()">Invest in the Stock Market</button>
+                            </div>
+                        </div>
+                        <div class="card col-md-6">
+                            <model-viewer id="cardviewer" src="https://raw.githubusercontent.com/Oscar-Ryley/Durhack-23/main/assets/3d_objects/model.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="./assets/3d_objects/model/poster.webp" shadow-intensity="1"> </model-viewer>
+                            <div class="card-body" id="model-info-box">
+                            <h4 class="card-title">Mortgages</h4>
+                            <p class="card-text">For when you want to buy your very own spaceship! Or... house... i guess.</p>
+                            <button id="button" onclick = "changeTextFour()">Learn More</button>
+                            <button id="buy-button" onclick = "changeTotalFour(); this.onclick=null;">Get a Mortgage</button>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <div class="card col-md-3 d-flex justify-content-center">
+                                    <model-viewer id="cardviewer-2" src="https://raw.githubusercontent.com/Oscar-Ryley/Durhack-23/main/assets/3d_objects/Deep%20Space%201_11.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="./assets/3d_objects/model/poster.webp" shadow-intensity="1"> </model-viewer>
+                                </div>
+                                <div class="card col-md-3 d-flex justify-content-cente">
+                                    <model-viewer id="cardviewer-2" src="https://raw.githubusercontent.com/Oscar-Ryley/Durhack-23/main/assets/3d_objects/Galileo.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="./assets/3d_objects/model/poster.webp" shadow-intensity="1"> </model-viewer>
+                                </div>
+                                <div class="card col-md-3 d-flex justify-content-center">
+                                    <model-viewer id="cardviewer-2" src="https://raw.githubusercontent.com/Oscar-Ryley/Durhack-23/main/assets/3d_objects/NASA_Aqua.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="./assets/3d_objects/model/poster.webp" shadow-intensity="1"> </model-viewer>
+                                </div>
+                            </div>
+                            <div class="card" id="information-box">
+                                <p>Put it into practice! You’ve learned a lot about how to save money - try it yourself by pressing the right hand buttons in each section and seeing how your money behaves each time.</p>
+                                <div style="display: flex;">
+                                    <p>Starting Money: $100,000; Total Money after spending habits: $</p>
+                                    <p id="Final">0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="popup-group">
+                            <button id="button" onclick="this.style.display='none'; popup.style.display='none'">x</button>
+                            <video width="100" height="300" name="Subway Servers" autoplay muted id="popup" loop>
+                                <source src="./assets/Video.mov">
+                            </video>
+                            <button id="button" onclick="this.style.display='none'; popup2.style.display='none'">x</button>
+                            <video width="200" height="300" name="Slime Video" autoplay muted id="popup2" loop poster="./assets/videoplayback(2).gif">
+                                <source poster="./asses/videoplayback(2).gif">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column c-text-right">
+                    <div class="card" id="information-box">
+                        <div class="card-body">
+                        <h2 class="card-title" id="MainTitle">Click 'Learn More' on one of the information boxes</h2>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="card" id="information-box">
+                        <div class="card-body">
+                        <h4 class="card-title" id="Title1"></h4>
+                        <p class="card-text" id="Text1"></p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="card" id="information-box">
+                        <div class="card-body">
+                        <h4 class="card-title" id="Title2"></h4>
+                        <p class="card-text" id="Text2"></p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="card" id="information-box">
+                        <div class="card-body">
+                        <h4 class="card-title" id="Title3"></h4>
+                        <p class="card-text" id="Text3"></p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="card" id="information-box">
+                        <div class="card-body">
+                        <h4 class="card-title" id="Title4"></h4>
+                        <p class="card-text" id="Text4"></p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <br>
+        </div>
+
+    </body>
+    <footer id="footer" class="text-center" style="padding-top: 40px;">
+        <div>
+            <p>Authored by David Stephenson &nbsp; &nbsp; 
+            <a style="color:white" href="https://www.linkedin.com/in/david-m-stephenson/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16"> 
+                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                </svg></a> &nbsp; &nbsp;
+                <a style="color:white" href="https://github.com/mmegidolaonn"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/> 
+                </svg></a>
+                &nbsp; &nbsp; and Oscar Ryley &nbsp; &nbsp; 
+            <a style="color:white" href="https://www.linkedin.com/in/oscar-ryley/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16"> 
+                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                </svg></a> &nbsp; &nbsp;
+            <a style="color:white" href="https://github.com/Oscar-Ryley"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/> 
+                </svg></a>
+            </p>
+            <p>Part of Durhack 2023</p>
+            <br>
+        </div>
+    </footer>
+</html>
