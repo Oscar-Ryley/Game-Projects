@@ -1,0 +1,379 @@
+[gd_scene load_steps=28 format=3 uid="uid://drv60fowrrvso"]
+
+[ext_resource type="Texture2D" uid="uid://bomku3lpcadg" path="res://assets/Background.svg" id="1_iyk8y"]
+[ext_resource type="Texture2D" uid="uid://ibwvxplkfilp" path="res://assets/Ground.svg" id="2_h6abp"]
+[ext_resource type="Texture2D" uid="uid://ct2tjp85j3xor" path="res://assets/Movement_Instructions.png" id="3_nq7c7"]
+[ext_resource type="Script" path="res://Godot/SignMovementInstructions.gd" id="4_2i262"]
+[ext_resource type="FontFile" uid="uid://t7myjio8eg4q" path="res://fonts/MouldyCheeseRegular-WyMWG.ttf" id="5_l8mnk"]
+[ext_resource type="Script" path="res://Godot/WinsCounter.gd" id="6_vuam8"]
+[ext_resource type="Texture2D" uid="uid://sxrimxaq7cjy" path="res://assets/Button_Fullscreen.svg" id="7_cltn6"]
+[ext_resource type="Texture2D" uid="uid://donlu3i3bhte1" path="res://assets/Button_Windowed.svg" id="8_j1p8k"]
+[ext_resource type="Script" path="res://Godot/FullScreenButton.gd" id="9_hkedk"]
+[ext_resource type="Script" path="res://Godot/QuoteOutput.gd" id="10_3dktk"]
+[ext_resource type="Texture2D" uid="uid://cldk54gufhnsl" path="res://assets/Arm_Base.svg" id="11_0qu65"]
+[ext_resource type="Script" path="res://Godot/ClawGrab.gd" id="12_1xoj5"]
+[ext_resource type="Texture2D" uid="uid://dapibj4uuk02p" path="res://assets/Arm_Grabber.svg" id="13_q02wy"]
+[ext_resource type="Texture2D" uid="uid://t04idosjio5r" path="res://assets/Arm_Grabber2.svg" id="14_vx86f"]
+[ext_resource type="Texture2D" uid="uid://cllqwb3atajk0" path="res://assets/Arm_Stem.svg" id="15_bfkvq"]
+[ext_resource type="Script" path="res://Godot/ArmStem.gd" id="16_covqn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1p6r3"]
+size = Vector2(1032.5, 1587)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ss5ae"]
+size = Vector2(3996, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gpypo"]
+size = Vector2(1038, 1600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48n0i"]
+size = Vector2(3992, 559)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l4k36"]
+radius = 2.23597
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3o26"]
+size = Vector2(52.8162, 85.1218)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fmx3"]
+size = Vector2(188.532, 48.3736)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_srijq"]
+size = Vector2(397, 55.9999)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5r8t5"]
+size = Vector2(77.9996, 1124.41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6aso"]
+size = Vector2(71, 2864)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vx1to"]
+size = Vector2(3767, 82.5)
+
+[node name="Scene" type="Node2D"]
+metadata/_edit_horizontal_guides_ = []
+metadata/_edit_vertical_guides_ = [-102.0]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -5
+texture = ExtResource("1_iyk8y")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background"]
+
+[node name="Ground" type="Sprite2D" parent="Background/StaticBody2D"]
+position = Vector2(959, 1044)
+texture = ExtResource("2_h6abp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(-516.75, 756.5)
+shape = SubResource("RectangleShape2D_1p6r3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(962, -22.5)
+shape = SubResource("RectangleShape2D_ss5ae")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(2437, 750)
+shape = SubResource("RectangleShape2D_gpypo")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(960, 1270.5)
+shape = SubResource("RectangleShape2D_48n0i")
+
+[node name="Controls" type="Sprite2D" parent="Background"]
+z_index = 6
+position = Vector2(102, 769)
+scale = Vector2(0.0616404, 0.0616404)
+texture = ExtResource("3_nq7c7")
+script = ExtResource("4_2i262")
+
+[node name="Use" type="Label" parent="Background/Controls"]
+offset_left = -1557.42
+offset_top = 405.579
+offset_right = -1393.42
+offset_bottom = 448.579
+scale = Vector2(9.95266, 9.18457)
+theme_override_colors/font_color = Color(0.976471, 0.796078, 0.25098, 1)
+theme_override_colors/font_outline_color = Color(0.937255, 0.513726, 0.329412, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("5_l8mnk")
+theme_override_font_sizes/font_size = 40
+text = "The Claw"
+
+[node name="Use2" type="Label" parent="Background/Controls"]
+offset_left = -1346.52
+offset_top = 794.934
+offset_right = -1193.52
+offset_bottom = 837.934
+scale = Vector2(11.2809, 11.8892)
+theme_override_colors/font_color = Color(0.976471, 0.796078, 0.25098, 1)
+theme_override_colors/font_outline_color = Color(0.937255, 0.513726, 0.329412, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("5_l8mnk")
+theme_override_font_sizes/font_size = 40
+text = "follows"
+
+[node name="Use3" type="Label" parent="Background/Controls"]
+offset_left = -1541.2
+offset_top = -1362.74
+offset_right = -1343.2
+offset_bottom = -1319.74
+scale = Vector2(9.46334, 9.97369)
+theme_override_colors/font_color = Color(0.976471, 0.796078, 0.25098, 1)
+theme_override_colors/font_outline_color = Color(0.937255, 0.513726, 0.329412, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("5_l8mnk")
+theme_override_font_sizes/font_size = 40
+text = "movement"
+
+[node name="WinsCounter" type="Label" parent="Background"]
+offset_left = 1790.0
+offset_top = 27.0
+offset_right = 1830.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.976471, 0.796078, 0.25098, 1)
+theme_override_colors/font_outline_color = Color(0.937255, 0.513726, 0.329412, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("5_l8mnk")
+theme_override_font_sizes/font_size = 40
+script = ExtResource("6_vuam8")
+
+[node name="WinsCounter" type="Label" parent="Background/WinsCounter"]
+layout_mode = 0
+offset_left = -157.0
+offset_top = -2.0
+offset_right = -20.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.976471, 0.796078, 0.25098, 1)
+theme_override_colors/font_outline_color = Color(0.937255, 0.513726, 0.329412, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("5_l8mnk")
+theme_override_font_sizes/font_size = 40
+text = "Version"
+
+[node name="FullScreenButton" type="TextureButton" parent="Background"]
+offset_left = 11.0
+offset_top = 13.0
+offset_right = 92.0
+offset_bottom = 94.0
+toggle_mode = true
+keep_pressed_outside = true
+texture_normal = ExtResource("7_cltn6")
+texture_pressed = ExtResource("8_j1p8k")
+script = ExtResource("9_hkedk")
+
+[node name="WinsCounter2" type="Label" parent="Background"]
+offset_left = 328.0
+offset_top = 37.0
+offset_right = 368.0
+offset_bottom = 77.0
+scale = Vector2(0.696472, 0.696472)
+theme_override_colors/font_color = Color(0.976471, 0.796078, 0.25098, 1)
+theme_override_colors/font_outline_color = Color(0.937255, 0.513726, 0.329412, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("5_l8mnk")
+theme_override_font_sizes/font_size = 40
+script = ExtResource("10_3dktk")
+
+[node name="ArmBase" type="Sprite2D" parent="."]
+position = Vector2(225, 853)
+texture = ExtResource("11_0qu65")
+
+[node name="Arm" type="Node2D" parent="ArmBase"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="ArmBase/Arm"]
+z_index = 3
+position = Vector2(775, -557)
+rotation = 2.10138
+script = ExtResource("12_1xoj5")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="ArmBase/Arm/CharacterBody2D"]
+texture_filter = 1
+
+[node name="ArmGrabber" type="Sprite2D" parent="ArmBase/Arm/CharacterBody2D/CharacterBody2D"]
+position = Vector2(0.46814, 0.93396)
+rotation = -2.26574
+texture = ExtResource("13_q02wy")
+centered = false
+offset = Vector2(-25, -30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArmBase/Arm/CharacterBody2D/CharacterBody2D"]
+position = Vector2(0.00012207, 0.00012207)
+shape = SubResource("CircleShape2D_l4k36")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ArmBase/Arm/CharacterBody2D/CharacterBody2D"]
+position = Vector2(152.745, -169.884)
+rotation = 1.08345
+shape = SubResource("RectangleShape2D_l3o26")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="ArmBase/Arm/CharacterBody2D/CharacterBody2D"]
+position = Vector2(-5.29922, -99.907)
+rotation = -1.58477
+shape = SubResource("RectangleShape2D_7fmx3")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="ArmBase/Arm/CharacterBody2D"]
+texture_filter = 1
+position = Vector2(0.42749, -0.0653076)
+rotation = -0.921845
+
+[node name="ArmGrabber2" type="Sprite2D" parent="ArmBase/Arm/CharacterBody2D/CharacterBody2D2"]
+position = Vector2(0.00012207, 6.10352e-05)
+texture = ExtResource("14_vx86f")
+offset = Vector2(-65, 115)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArmBase/Arm/CharacterBody2D/CharacterBody2D2"]
+position = Vector2(-27.5314, 220.435)
+rotation = -0.17898
+shape = SubResource("RectangleShape2D_l3o26")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ArmBase/Arm/CharacterBody2D/CharacterBody2D2"]
+position = Vector2(-82.3208, 160.631)
+rotation = -2.23721
+shape = SubResource("RectangleShape2D_7fmx3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ArmBase/Arm/CharacterBody2D/CharacterBody2D2"]
+position = Vector2(-75.0177, 55.5803)
+rotation = -0.675575
+shape = SubResource("RectangleShape2D_7fmx3")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="ArmBase/Arm/CharacterBody2D"]
+position = Vector2(66.3233, -173.341)
+rotation = -0.0200946
+shape = SubResource("RectangleShape2D_7fmx3")
+
+[node name="RemoteTransform2D1" type="RemoteTransform2D" parent="ArmBase/Arm/CharacterBody2D"]
+position = Vector2(-2.73711, -0.71283)
+rotation = -2.10138
+remote_path = NodePath("../ArmStem1")
+update_rotation = false
+
+[node name="ArmStem1" type="Sprite2D" parent="ArmBase/Arm/CharacterBody2D"]
+z_index = 1
+position = Vector2(-2.73711, -0.71283)
+rotation = -2.10138
+texture = ExtResource("15_bfkvq")
+centered = false
+offset = Vector2(-50, -368)
+script = ExtResource("16_covqn")
+
+[node name="RemoteTransform2D2" type="RemoteTransform2D" parent="ArmBase/Arm/CharacterBody2D/ArmStem1"]
+position = Vector2(-2.99988, -325)
+rotation = -2.10138
+remote_path = NodePath("../ArmStem2")
+update_rotation = false
+
+[node name="ArmStem2" type="Sprite2D" parent="ArmBase/Arm/CharacterBody2D/ArmStem1"]
+z_index = 1
+position = Vector2(-2.99988, -325)
+texture = ExtResource("15_bfkvq")
+centered = false
+offset = Vector2(-50, -368)
+
+[node name="RemoteTransform2D3" type="RemoteTransform2D" parent="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2"]
+position = Vector2(-1, -312)
+rotation = 2.08043
+remote_path = NodePath("../ArmStem3")
+update_rotation = false
+
+[node name="ArmStem3" type="Sprite2D" parent="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2"]
+z_index = 1
+position = Vector2(-1, -312)
+texture = ExtResource("15_bfkvq")
+centered = false
+offset = Vector2(-50, -368)
+
+[node name="RemoteTransform2D4" type="RemoteTransform2D" parent="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3"]
+position = Vector2(-1, -312)
+rotation = 2.08043
+remote_path = NodePath("../ArmStem4")
+update_rotation = false
+
+[node name="ArmStem4" type="Sprite2D" parent="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3"]
+z_index = 1
+position = Vector2(-1, -312)
+texture = ExtResource("15_bfkvq")
+centered = false
+offset = Vector2(-50, -368)
+
+[node name="RemoteTransform2D5" type="RemoteTransform2D" parent="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3/ArmStem4"]
+position = Vector2(-1, -312)
+rotation = 2.08043
+remote_path = NodePath("../RigidBody2D")
+update_rotation = false
+
+[node name="RigidBody2D" type="RigidBody2D" parent="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3/ArmStem4"]
+position = Vector2(-1, -312)
+mass = 0.01
+gravity_scale = 0.0
+max_contacts_reported = 1
+contact_monitor = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3/ArmStem4/RigidBody2D"]
+position = Vector2(-5.5, -2.00018)
+shape = SubResource("RectangleShape2D_srijq")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3/ArmStem4"]
+position = Vector2(3137, -318)
+gravity_scale = 0.0
+max_contacts_reported = 1
+contact_monitor = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3/ArmStem4/RigidBody2D2"]
+position = Vector2(0, 1382)
+scale = Vector2(1, 2.36)
+shape = SubResource("RectangleShape2D_5r8t5")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3/ArmStem4"]
+position = Vector2(-3148, -327)
+gravity_scale = 0.0
+max_contacts_reported = 1
+contact_monitor = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3/ArmStem4/RigidBody2D3"]
+position = Vector2(1.00024, 1492)
+shape = SubResource("RectangleShape2D_s6aso")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3/ArmStem4"]
+position = Vector2(-99, 2918)
+gravity_scale = 0.0
+max_contacts_reported = 1
+contact_monitor = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3/ArmStem4/RigidBody2D4"]
+position = Vector2(24, -248.75)
+shape = SubResource("RectangleShape2D_vx1to")
+
+[node name="ArmStem" type="Sprite2D" parent="ArmBase/Arm"]
+z_index = 1
+position = Vector2(9, 111)
+rotation = 0.0584325
+texture = ExtResource("15_bfkvq")
+centered = false
+offset = Vector2(-50, -368)
+
+[node name="ArmStem2" type="Sprite2D" parent="ArmBase/Arm"]
+z_index = 1
+position = Vector2(25, -218)
+rotation = -0.125209
+texture = ExtResource("15_bfkvq")
+centered = false
+offset = Vector2(-50, -368)
+
+[node name="ArmStem3" type="Sprite2D" parent="ArmBase/Arm"]
+z_index = 1
+position = Vector2(-16, -541)
+rotation = 0.15055
+texture = ExtResource("15_bfkvq")
+centered = false
+offset = Vector2(-50, -368)
+
+[connection signal="toggled" from="Background/FullScreenButton" to="Background/FullScreenButton" method="_on_toggled"]
+[connection signal="body_entered" from="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3/ArmStem4/RigidBody2D" to="ArmBase/Arm/CharacterBody2D" method="_on_rigid_body_2d_body_entered"]
+[connection signal="body_exited" from="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3/ArmStem4/RigidBody2D" to="ArmBase/Arm/CharacterBody2D" method="_on_rigid_body_2d_body_exited"]
+[connection signal="body_entered" from="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3/ArmStem4/RigidBody2D2" to="ArmBase/Arm/CharacterBody2D" method="_on_rigid_body_2d_2_body_entered"]
+[connection signal="body_exited" from="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3/ArmStem4/RigidBody2D2" to="ArmBase/Arm/CharacterBody2D" method="_on_rigid_body_2d_2_body_exited"]
+[connection signal="body_entered" from="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3/ArmStem4/RigidBody2D3" to="ArmBase/Arm/CharacterBody2D" method="_on_rigid_body_2d_3_body_entered"]
+[connection signal="body_exited" from="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3/ArmStem4/RigidBody2D3" to="ArmBase/Arm/CharacterBody2D" method="_on_rigid_body_2d_3_body_exited"]
+[connection signal="body_entered" from="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3/ArmStem4/RigidBody2D4" to="ArmBase/Arm/CharacterBody2D" method="_on_rigid_body_2d_4_body_entered"]
+[connection signal="body_exited" from="ArmBase/Arm/CharacterBody2D/ArmStem1/ArmStem2/ArmStem3/ArmStem4/RigidBody2D4" to="ArmBase/Arm/CharacterBody2D" method="_on_rigid_body_2d_4_body_exited"]
